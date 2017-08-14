@@ -4,7 +4,7 @@
 * GPIO软件测试采用fork出新进程进行处理；
 * 使用namespace对class命名空间进行范围约束。
 
-输出信息：
+* 输出信息格式：
 ```
 [root ~]# ./hardware_test
 {
@@ -18,6 +18,8 @@
 
 [root ~]#
 ```
+* 输出信息使用参考：
+  * [HardwareModuleDemo](https://github.com/ZengjfOS/HardwareModuleDemo)：请参考json部分内容。
 
 ## GPIO LED Module代码参考
 
