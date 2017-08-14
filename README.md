@@ -2,22 +2,21 @@
 
 * 添加jsoncpp作为json数据合成方法，编译json数据转换输出；
 * GPIO软件测试采用fork出新进程进行处理；
-* 使用namespace对class命名空间进行范围约束。
-
+* 使用namespace对class命名空间进行范围约束；
 * 输出信息格式：
-```
-[root ~]# ./hardware_test
-{
-   "categories" : "hardware_test",
-   "data" : {
-      "GPIO" : {
-         "status" : "ok"
-      }
-   }
-}
-
-[root ~]#
-```
+    ```
+    [root ~]# ./hardware_test
+    {
+       "categories" : "hardware_test",
+       "data" : {
+          "GPIO" : {
+             "status" : "ok"
+          }
+       }
+    }
+    
+    [root ~]#
+    ```
 * 输出信息使用参考：
   * [HardwareModuleDemo](https://github.com/ZengjfOS/HardwareModuleDemo)：请参考json部分内容。
 
