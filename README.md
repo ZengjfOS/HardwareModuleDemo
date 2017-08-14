@@ -1,5 +1,9 @@
 # Hardware Test Module Progam Demo
 
+* 添加jsoncpp作为json数据合成方法，编译json数据转换输出；
+* GPIO软件测试采用fork出新进程进行处理；
+* 使用namespace对class命名空间进行范围约束。
+
 ## 原先代码参考
 
 * [io_program/gpio_led.h](io_program/gpio_led.h)
