@@ -18,7 +18,7 @@
     [root ~]#
     ```
 * 输出信息使用参考：
-  * [HardwareModuleDemo](https://github.com/ZengjfOS/HardwareModuleDemo)：请参考json部分内容。
+  * [PHPConfigDemo](https://github.com/ZengjfOS/PHPConfigDemo)：请参考json部分内容。
 
 ## GPIO LED Module代码参考
 
