@@ -1,6 +1,5 @@
 #include <iostream>
-#include <gpio_led.h>
-#include <json/json.h>
+#include <includes.h>
 
 using namespace std;
 using namespace GPIO;
@@ -23,6 +22,14 @@ int main(int argc, char** argv)
 
         exit(0);
     } else {
+
+        float tmp = 0;
+        struct i2c_tmp75 *tmp75;
+
+        tmp75 = tmp75_init(TMP75_SLAVE_REG, TMP75_I2C_DEV, TMP75_OUTPUT_DEV);
+        tmp = tmp75->read(tmp75);
+        tmp75->exit(tmp75);
+
         Json::Value gpio;
         // set gpio hardware test status
         gpio["status"] = "ok";
