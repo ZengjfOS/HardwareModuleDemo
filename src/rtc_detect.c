@@ -22,7 +22,7 @@ struct rtc_detect *rtc_detect_init(void)
 
 int rtc_detect_read(struct rtc_detect *rtc_det)
 {
-    int fd, retval, timestamp = 0;
+    int fd, retval;
 
     fd = open(rtc_det->rtc_device, O_RDONLY);
     if (fd < 0)

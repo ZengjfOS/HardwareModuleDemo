@@ -18,7 +18,7 @@ struct uart_us100 *uart_us100_init(void)
     us100->command = COMMAND;
 
     us100->read = uart_us100_read;
-    us100->exit = uart_us100_exit;
+    us100->release = uart_us100_release;
     us100->set_opt = set_opt;
 
     return us100;
@@ -65,7 +65,7 @@ int uart_us100_read(struct uart_us100 *us100)
     return distant;
 }
 
-void uart_us100_exit(struct uart_us100 *us100)
+void uart_us100_release(struct uart_us100 *us100)
 {
     free(us100);
 }

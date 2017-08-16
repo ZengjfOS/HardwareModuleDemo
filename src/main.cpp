@@ -4,31 +4,61 @@
 using namespace std;
 using namespace GPIO;
 
-int main(int argc, char** argv) 
+class Hardware_test *context;
+
+// refer to http://www.cnblogs.com/zengjfgit/p/7374516.html
+void creat_daemon(void)
 {
+    pid_t pid;
     GPIO_LED gpio_led;
 
+    pid = fork();
+    if ( pid == -1)
+        printf("fork error");
+
+    if (pid > 0 )
+        exit(EXIT_SUCCESS);
+
+    if (setsid() == -1)
+        printf("SETSID ERROR");
+
+    chdir("/");
+
+    int i;
+    for (i = 0; i < 3; ++i) {
+        close(i);
+        open("/dev/null", O_RDWR);
+        dup(0);
+        dup(0);
+    }
+
+    umask(0);
+
+    gpio_led.init();
+    while (1) {
+        gpio_led.left_to_right();
+        gpio_led.right_to_left();
+        gpio_led.all_light();
+    }
+    gpio_led.release();
+
+    exit(0);
+
+    return;
+}
+
+int main(int argc, char** argv) 
+{
     Json::Value root;
     Json::Value data;
     root["categories"] = "hardware_test";
 
     // fork new process to test gpio
     if (fork() == 0) {  // child process
-        gpio_led.init();
-        gpio_led.left_to_right();
-        gpio_led.right_to_left();
-        gpio_led.all_light();
-        gpio_led.release();
-
-        exit(0);
+        creat_daemon();
     } else {
 
-        float tmp = 0;
-        struct i2c_tmp75 *tmp75;
-
-        tmp75 = tmp75_init(TMP75_SLAVE_REG, TMP75_I2C_DEV, TMP75_OUTPUT_DEV);
-        tmp = tmp75->read(tmp75);
-        tmp75->exit(tmp75);
+        context = (class Hardware_test *)(malloc(sizeof(class Hardware_test)));
 
         Json::Value gpio;
         // set gpio hardware test status
@@ -44,5 +74,7 @@ int main(int argc, char** argv)
         string outputJsonstring = writer.write(root);
 
         cout << outputJsonstring << endl;
+
+        exit(0);
     }
 }
