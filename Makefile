@@ -1,5 +1,5 @@
-# CC = arm-linux-gnueabihf-g++
-CC = g++
+CC = arm-linux-gnueabihf-g++
+# CC = g++
 
 OUTPUT = hardware_test
 

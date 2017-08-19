@@ -150,7 +150,6 @@ int set_opt(int fd, int nSpeed, int nBits, char nEvent, int nStop)
         perror("com set error");
         return -1;
     }
-    printf("set done!\n\r");
     return 0;
 }
 
