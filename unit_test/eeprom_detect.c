@@ -1,4 +1,4 @@
-#include "../include/eeprom_detect.h"
+#include "eeprom_detect.h"
 
 int main(void)
 {
