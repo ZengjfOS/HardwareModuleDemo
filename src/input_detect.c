@@ -54,7 +54,7 @@ int detect_spe_device(char *device_name, char *path, int device_name_size)
     {
         if(tmp_buf[0] == device_name[0])
         {
-            if ((strncmp(tmp_buf, device_name, device_name_size)) == 0)
+            if ((strncasecmp(tmp_buf, device_name, device_name_size)) == 0)
             {
                 detect_num = 1;
                 break;
