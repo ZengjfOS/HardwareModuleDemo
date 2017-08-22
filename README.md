@@ -18,7 +18,8 @@
     [root ~]#
     ```
 * 输出信息使用参考：
-  * [PHPConfigDemo](https://github.com/ZengjfOS/PHPConfigDemo)：请参考json部分内容。
+  * [PHPConfigDemo json解析部分](https://github.com/ZengjfOS/PHPConfigDemo/blob/master/json.php)
+* [PHP Web Server Linker](https://github.com/ZengjfOS/HardwareModuleDemo/tree/PHP_Web_Page)
 
 ## GPIO LED Module代码参考
 
