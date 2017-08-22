@@ -107,7 +107,7 @@ public:
         }
 
         gpio_json["name"] = "MIO_8_GPIO";
-        gpio_json["index"] = "10";
+        gpio_json["index"] = "9";
         gpio_json["descriptor"] = "gpio";
         gpio_json["range"] = "";
         gpio_json["value"] = "";
@@ -125,7 +125,7 @@ public:
             eeprom_json["status"] = "error";
 
         eeprom_json["name"] = "EEPROM";
-        eeprom_json["index"] = "12";
+        eeprom_json["index"] = "11";
         eeprom_json["descriptor"] = "i2c";
         eeprom_json["range"] = "";
         eeprom_json["value"] = "";
@@ -207,7 +207,7 @@ public:
             value["status"] = "error";
 
         value["name"] = "mouse";
-        value["index"] = "4";
+        value["index"] = "5";
         value["descriptor"] = "usb";
         value["range"] = "";
         value["value"] = "";
@@ -238,7 +238,7 @@ public:
             value["status"] = "error";
 
         value["name"] = "MIO_USB";
-        value["index"] = "11";
+        value["index"] = "10";
         value["descriptor"] = "usb";
         value["range"] = "";
         value["value"] = "";
@@ -251,7 +251,7 @@ public:
             value["status"] = "error";
 
         value["name"] = "CON3_USB";
-        value["index"] = "13";
+        value["index"] = "7";
         value["descriptor"] = "usb";
         value["range"] = "";
         value["value"] = "";
