@@ -4,18 +4,98 @@
 * GPIO软件测试采用fork出新进程进行处理；
 * 使用namespace对class命名空间进行范围约束；
 * 输出信息格式：
-    ```
-    [root ~]# ./hardware_test
+    ```JSON
     {
        "categories" : "hardware_test",
        "data" : {
-          "GPIO" : {
-             "status" : "ok"
+          "eeprom" : {
+             "descriptor" : "i2c",
+             "index" : "11",
+             "name" : "EEPROM",
+             "range" : "",
+             "status" : "ok",
+             "value" : ""
+          },
+          "gpio" : {
+             "descriptor" : "gpio",
+             "index" : "9",
+             "name" : "MIO_8_GPIO",
+             "range" : "",
+             "status" : "ok",
+             "value" : ""
+          },
+          "input" : {
+             "keyboard" : {
+                "descriptor" : "usb",
+                "index" : "4",
+                "name" : "keyboard",
+                "range" : "",
+                "status" : "error",
+                "value" : ""
+             },
+             "mouse" : {
+                "descriptor" : "usb",
+                "index" : "5",
+                "name" : "mouse",
+                "range" : "",
+                "status" : "error",
+                "value" : ""
+             },
+             "status" : "error",
+             "touch" : {
+                "descriptor" : "usb",
+                "index" : "4",
+                "name" : "touch",
+                "range" : "",
+                "status" : "ok",
+                "value" : ""
+             }
+          },
+          "rtc" : {
+             "descriptor" : "i2c",
+             "index" : "3",
+             "name" : "rtc",
+             "range" : "",
+             "status" : "ok",
+             "value" : 0
+          },
+          "tmp75" : {
+             "descriptor" : "i2c",
+             "index" : "8",
+             "name" : "CON3_I2C",
+             "range" : "",
+             "status" : "ok",
+             "value" : 27.125
+          },
+          "udisk" : {
+             "status" : "error",
+             "usb1" : {
+                "descriptor" : "usb",
+                "index" : "10",
+                "name" : "MIO_USB",
+                "range" : "",
+                "status" : "error",
+                "value" : ""
+             },
+             "usb2" : {
+                "descriptor" : "usb",
+                "index" : "7",
+                "name" : "CON3_USB",
+                "range" : "",
+                "status" : "error",
+                "value" : ""
+             }
+          },
+          "us100" : {
+             "descriptor" : "uart",
+             "index" : "6",
+             "name" : "DB9_RS232",
+             "range" : "",
+             "status" : "ok",
+             "value" : 506
           }
        }
     }
-    
-    [root ~]#
     ```
 * 输出信息使用参考：
   * [PHPConfigDemo json解析部分](https://github.com/ZengjfOS/PHPConfigDemo/blob/master/json.php)
